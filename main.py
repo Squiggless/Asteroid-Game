@@ -35,6 +35,11 @@ def main():
 						player.speed[0] = -10
 					if event.key == K_RIGHT:
 						player.speed[0] = 10
+				if event.type == KEYUP:
+					if event.key == K_DOWN or event.key == K_UP:
+						player.speed[1] = 0
+					if event.key == K_LEFT or event.key == K_RIGHT:
+						player.speed[0] = 0
 		player.move_player()
 		screen.blit(background_image, background_rect)
 		screen.blit(player.image, player.rect)
