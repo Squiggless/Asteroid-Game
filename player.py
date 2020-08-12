@@ -16,3 +16,9 @@ class Player(pygame.sprite.Sprite):
 
 	def move_player(self):
 		self.rect.move_ip(self.speed)
+		if self.rect.left < 0:
+			self.rect.left = 0	
+		if self.rect.top  < 0:
+			self.rect.top = 0
+		if self.rect.bottom > 600:
+			self.rect.bottom = 600
