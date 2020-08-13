@@ -26,8 +26,8 @@ player = Player(image_name = "space_ship.png", scale = 0.15, pos = (start))
 enemies = pygame.sprite.Group()
 
 def makeEnemies(level):
+	enemies.empty()
 	for i in range(level):
-		enemies.empty()
 		enemy = Enemy(image_name = "asteroid.png", scale = 0.5 )
 		enemies.add(enemy)
 
@@ -57,6 +57,13 @@ def main():
 		hits = pygame .sprite.spritecollide(player, enemies, False)
 		if hits:
 			player.reset((start))
+
+		if player.rect.left > width:
+			player.reset(start)
+			level += 1
+			makeEnemies(level)
+			print(level)
+
 		screen.blit(background_image, background_rect)
 		enemies.draw(screen)
 		screen.blit(player.image, player.rect)

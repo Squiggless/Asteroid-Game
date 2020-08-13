@@ -9,7 +9,7 @@ class Enemy(pygame.sprite.Sprite):
 
 		self.image = pygame.transform.scale(self.image,(int(scale*self.rect.width), int(scale*self.rect.height)))
 		self.rect = self.image.get_rect()
-		x = random.randint(70, 800)
+		x = random.randint(150, 800)
 		y = random.randint(0, 600)
 		self.rect.center = (x, y)
 		# making sure enemy stays on screen
@@ -26,7 +26,7 @@ class Enemy(pygame.sprite.Sprite):
 		self.speed.rotate_ip(rotation)
 	def update(self):
 		self.rect.move_ip(self.speed)
-		if self.rect.right > 800 or self.rect.left < 80:
+		if self.rect.right > 800 or self.rect.left < 150:
 			self.speed[0] *= -1
 		if self.rect.top < 0 or self.rect.bottom > 600:
 			self.speed[1] *= -1
