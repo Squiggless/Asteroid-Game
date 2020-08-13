@@ -11,6 +11,8 @@ class Player(pygame.sprite.Sprite):
 		self.reset(pos)
 		self.speed = pygame.math.Vector2(0, 0)
 	
+		self.angle = 0
+	
 	def reset(self, pos):
 		self.rect.center = pos
 
