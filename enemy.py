@@ -15,8 +15,8 @@ class Enemy(pygame.sprite.Sprite):
 		# making sure enemy stays on screen
 		if self.rect.right > 800:
 			self.rect.right = 800
-		if self.rect.left < 70: 
-			self.rect.left = 70
+		if self.rect.left < 150: 
+			self.rect.left = 150
 		if self.rect.top < 0: 
 			self.rect.top = 0
 		if self.rect.bottom > 600:

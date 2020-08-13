@@ -32,6 +32,7 @@ def makeEnemies(level):
 		enemies.add(enemy)
 
 def main():
+	deaths = 0
 	level = 1
 	makeEnemies(level)
 	while True:
@@ -57,12 +58,14 @@ def main():
 		hits = pygame .sprite.spritecollide(player, enemies, False)
 		if hits:
 			player.reset((start))
+			deaths += 1
+			print(f"Deaths: {deaths}")
 
 		if player.rect.left > width:
 			player.reset(start)
 			level += 1
 			makeEnemies(level)
-			print(level)
+			print(f"Level: {level}")
 
 		screen.blit(background_image, background_rect)
 		enemies.draw(screen)
