@@ -19,6 +19,7 @@ background_rect = background_image.get_rect()
 background_image = pygame.transform.scale(background_image, (int(0.5 * background_rect.width), int(0.5 * background_rect.height)))
 background_rect = background_image.get_rect()
 background_rect.center = (width // 2, height // 2)
+
 start = (50, 300)
 
 player = Player(image_name = "space_ship.png", scale = 0.15, pos = (start))
